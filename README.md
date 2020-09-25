@@ -6,5 +6,4 @@ Write a function called numberOfVowels(in string: String) that returns the count
 
 Example: numberOfVowels(in: "Polly wants a cracker!", isYAVowel = true) // returns 6
 
-
-![Glad!](https://giphy.com/gifs/zqwKwYGXKlSGRqI56p.gif)
+![](Glad.gif)
