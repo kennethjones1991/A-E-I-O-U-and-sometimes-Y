@@ -38,12 +38,26 @@ class iOSPT7_Code_ChallengeTests: XCTestCase {
         return false
     }
     
-    func numberOfVowels(in string: String, isYAVowel: Bool = false) -> Int {
+    func numberOfVowels2(in string: String, isYAVowel: Bool = false) -> Int {
         // Write your code here
         var numVowels = 0
         // loop through each character in the string, if it's a vowel, no matter the case, add one to numVowels, remember to make numVowels 0 again at the end
         for character in string {
             if checkIfVowel(character: character, includeY: isYAVowel) {
+                numVowels += 1
+            }
+        }
+        
+        return numVowels
+    }
+    
+    func numberOfVowels(in string: String, isYAVowel: Bool = false) -> Int {
+        var numVowels = 0
+        var vowels = Set<Character>(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"])
+        if isYAVowel { vowels.insert("y"); vowels.insert("Y") }
+        
+        for index in string.indices {
+            if vowels.contains(string[index]) {
                 numVowels += 1
             }
         }
