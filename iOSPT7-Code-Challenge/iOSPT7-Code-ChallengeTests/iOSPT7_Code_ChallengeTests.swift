@@ -15,12 +15,40 @@ class iOSPT7_Code_ChallengeTests: XCTestCase {
     let tikTokGlad = "Sing or I shoot"
     let y = "YYYyyyYyYyYYYYY"
     
+    func checkIfVowel(character: Character, includeY: Bool) -> Bool {
+        if includeY {
+            if character.lowercased() == "a"
+                || character.lowercased() == "e"
+                || character.lowercased() == "i"
+                || character.lowercased() == "o"
+                || character.lowercased() == "u"
+                || character.lowercased() == "y" {
+                return true
+            }
+        } else {
+            if character.lowercased() == "a"
+                || character.lowercased() == "e"
+                || character.lowercased() == "i"
+                || character.lowercased() == "o"
+                || character.lowercased() == "u" {
+                return true
+            }
+        }
+        
+        return false
+    }
     
     func numberOfVowels(in string: String, isYAVowel: Bool = false) -> Int {
         // Write your code here
+        var numVowels = 0
+        // loop through each character in the string, if it's a vowel, no matter the case, add one to numVowels, remember to make numVowels 0 again at the end
+        for character in string {
+            if checkIfVowel(character: character, includeY: isYAVowel) {
+                numVowels += 1
+            }
+        }
         
-        // This is here so the compiler won't yell, change this as needed for your code
-        return 0
+        return numVowels
     }
 
     func testReadMeExample() {
